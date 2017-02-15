@@ -9,7 +9,7 @@ require(['scratchcard', 'domReady!'], function init(Scratchcard) {
 	'use strict';
 
 	// Retrieve the target element
-	var element = document.getElementById('test');
+	var element = document.getElementById('scratch-img');
 
 	// Build the painter
 	var painter = new Scratchcard.Painter({color: '#d11212'});
@@ -38,6 +38,8 @@ require(['scratchcard', 'domReady!'], function init(Scratchcard) {
 		// console.log('Progress:', progress);
 		if ((progress > 0.7) && (progress < 1)) {
 			scratchcard.complete();
+			// scratchcard.dispatchEvent('completed'); // DucBM
+			callback();
 		}
 	});
 
