@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)http://game.wisky.vn/game?key=b129sn24-811c-4222-9596-50bec50c35f5 -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title> Phổ Đình | Cào trúng thưởng</title>
+	<link rel="shortcut icon" type="image/ico" href="http://game.wisky.vn/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/theme.css">
+    <link rel="stylesheet" type="text/css" href="css/sweetalert.css" >
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<body class="modal-open">
+    <input type="hidden" id="isEnableShareFb" value="false">
+    <input id="code-entered" class="form-control text-center" placeholder="NHẬP MÃ CODE" type="hidden">
+    <input id="game-key" value="b129sn24-811c-4222-9596-50bec50c35f5" class="form-control text-center" style="display: none">
+    <div class="body-inner">
+        <div class="logo">
+            <img src="images/logo.png">
+        </div>
+        <div>
+            <h1 class="title">
+                <span>Dưa lê</span> sảng khoái<br>
+                thoải mái <span>đầu hè</span>
+            </h1>
+            
+        </div>
+        <div class="text-center">
+        <div class="ticket-container">
+            <div class="ticket">
+                <h5 class="sub-title">Ép Dưa Lê thơm mát, giá dùng thử chỉ <span style="font-size:larger">40.000</span> vnđ/ly</h5>
+                <h3 class="text-center">Cào để nhận ưu đãi</h3>
+                <div class="scratch-wrapper">
+                    <img draggable="false" id="test" class="scratch-img" src="images/test.jpg" width="250" height="200"></img>
+                </div>
+            </div>
+        </div>
+        </div>
+        <p class="note">Lưu ý: Ưu đãi chỉ áp dụng trong ngày tại chi nhánh<br> 67-69-71 Nam Kỳ Khởi Nghĩa</p>
+    </div>
+
+    <div class="modal-backdrop" id="loading-image" style="display:none; background:rgba(255,255,255,0); z-index:99999999;">
+        <strong style="padding:3px 4px; background: rgba(255, 255, 255, 1);-webkit-transform:scale(0.6);position: absolute; top: 50%; left: 50%; font-size: 50px; transform: translate(-50%, -50%) scale(0.5);">loading...</strong>
+    </div>
+
+    <div class="modal modal-transparent in" id="modalInfo" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <input type="hidden" id="hiddenGift" val="">
+                    <h3 class="text-center uppercase">chúc mừng bạn! bạn đã được</h3>
+                    <h2 style="font-size: 28px;" class="text-center uppercase" id="giftName">Giảm giá 100% cho nước ép dưa lê khi đặt ngay bây giờ</h2>
+                    <div class="gift-container" style="text-align:center">
+                        <img id="giftImg" src="images/s-back.png" height="150" width="150">
+                    </div>
+                    <hr>
+                    <h4 class="text-center uppercase">Vui lòng điền thông tin ở dưới để nhận quà tặng</h4>
+                    <form id="customer-info-form">
+                        <input type="hidden" name="GiftID" value="">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">HỌ TÊN (*)</label>
+                                <div class="col-md-7">
+                                    <input name="Name" class="form-control input-lg" placeholder="" required="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">GIỚI TÍNH (*)</label>
+                                <div class="col-md-7">
+                                    <select id="gender" class="form-control input-lg">
+                                        <option value="1">Nam</option>
+                                        <option value="0">Nữ</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">SỐ ĐIỆN THOẠI (*)</label>
+                                <div class="col-md-7">
+                                    <input name="Phone" class="form-control input-lg" placeholder="" required="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">EMAIL (*)</label>
+                                <div class="col-md-7">
+                                    <input name="Email" class="form-control input-lg" placeholder="" required="">
+                                </div>
+                            </div>
+							 <div class="form-group">
+                                <label class="col-md-4 control-label">SỐ BÀN (*)</label>
+                                <div class="col-md-7">
+                                    <input type="text" name="TableNumber" class="form-control input-lg" placeholder="" required="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button id="btnSend" type="submit" class="btn btn-success btn-lg">XÁC NHẬN</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.modal -->
+
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/sweetalert.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script data-main="plugins/scratch/require-scratch.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js"></script>
+</body>
+</html>
